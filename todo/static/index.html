@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html  ng-app="moonshine.todoexample">
+  <head>
+    <meta charset="utf-8">
+    <title>Moonshine example Todo app</title>
+    <script	src="lib/angular.min.js"></script>
+    <script src="lib/underscore-min.js"></script>
+    <script src="lib/restangular.min.js"></script>
+    <script src="api/moonbridge.js"></script>
+    <script src="index.js"></script>
+  </head>
+<body>
+<div ng-controller="MainCtrl">
+	create new: <input type="text" ng-model="newList.name"/><button type="submit" ng-click="addList(newList)">add</button>
+	<select ng-model="currentList" ng-options="l.name for l in lists"></select>
+	todos in {{currentList.name}}:
+	<div ng-repeat="todo in currentList.items">
+		<input type="text" ng-model="todo"/>
+	</div>
+	<button type="submit" ng-click="currentList.put()">update</button>
+	<div>
+		add todo: <br/>
+		<input type="text" ng-model="newTodo"/><button type="submit" ng-click="currentList.items.push(newTodo);currentList.put();newTodo='';">add</button>
+	</div>
+</div>
+</body>
+</html>

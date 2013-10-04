@@ -1,0 +1,19 @@
+{
+  "name": "moonshine-example-todo",
+  "version": "0.0.1",
+  "author": "Illniyar",
+  "description": "a web framework for rapid development of SPA apps with angular.js,node and mongodb",
+  "private":true,
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Illniyar/moonshine-example-todo"
+  },
+  "licenses": {
+    "type": "MIT",
+    "url": "http://opensource.org/licenses/MIT"
+  },
+  "homepage": "https://github.com/Illniyar/moonshine-example-todo",
+  "dependencies": {
+    "moonshine-js":"*"
+  }
+}
