@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html  ng-app="moonshine.authexample">
+  <head>
+    <meta charset="utf-8">
+    <title>Moonshine example Authentication app</title>
+    <script	src="lib/angular.min.js"></script>
+    <script src="lib/underscore-min.js"></script>
+    <script src="lib/restangular.min.js"></script>
+	<script src="lib/angular-ui-router.min.js"></script>
+    <script src="user/authentication.js"></script>
+    <script src="api/moonbridge.js"></script>
+    <script src="user/local.js"></script>
+    <script src="index.js"></script>
+
+	<script type="text/ng-template" id="home.html">
+		<div>
+			you are home.
+			<div ng-show="authentication.isAuthenticated">welcome {{user.name}} (username:{{user.username}})<div>
+			<div ng-hide="authentication.isAuthenticated">but you are not logged in</div>
+		</div>
+    </script>
+    <script type="text/ng-template" id="logout.html">
+      <div>
+          are you sure you want to logout?<br/>
+          <button type="submit" ng-click="logout()">yes</button>
+          <button type="submit" ng-click="cancelLogout()">cancel</button>
+    </script>
+	<script type="text/ng-template" id="register.html">
+		<div>
+			<div ng-hide="state == 'waiting'">status: {{state}}</div>
+			register with:<br/>
+			username:<input type="text" ng-model="user.username"/><br/>
+			password:<input type="text" ng-model="user.password"/><br/>
+            name:<input type="text" ng-model="user.name"/><br/>
+            rememberMe:<input type="checkbox" ng-model="user.rememberme"/><br/>
+			<button type="submit" ng-click="register()">register</button>
+			<br/>
+			<a href="#/login">register</a>
+		</div>
+    </script>
+	<script type="text/ng-template" id="login.html">
+		<div>
+			<div ng-hide="state == 'waiting'">status: {{state}}</div>
+			login with:<br/>
+            username:<input type="text" ng-model="user.username"/><br/>
+            password:<input type="text" ng-model="user.password"/><br/>
+            rememberMe:<input type="checkbox" ng-model="user.rememberme"/>
+			<button type="submit" ng-click="login()">login</button>
+			<br/>
+			<a href="#/register">register</a>
+		</div>
+    </script>
+  </head>
+<body>
+<div ng-controller="MainCtrl">
+	navigation:<br/>
+	<a ng-hide="authentication.isAuthenticated" href="#/login">login</a>
+    <a ng-show="authentication.isAuthenticated" href="#/logout">logout</a>
+    <br/>
+	<a href="#/home">home</a><br/>
+	<a href="#/secured">secured</a><br/>
+	<div ui-view></div>
+</div>
+</body>
+</html>

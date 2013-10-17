@@ -1,5 +1,5 @@
-{
-  "name": "moonshine-example-todo",
+﻿{
+  "name": "moonshine-example-authentication",
   "version": "0.0.1",
   "author": "Illniyar",
   "description": "a web framework for rapid development of SPA apps with angular.js,node and mongodb",
@@ -14,6 +14,14 @@
   },
   "homepage": "https://github.com/Illniyar/moonshine-example",
   "dependencies": {
-    "moonshine-js":"*"
-  }
+    "moonshine-js":"*",
+	"moon-contrib-user":"*",
+    "moon-contrib-user-local":"*",
+    "moon-contrib-user-rememberme":"*"
+  },
+  "moonApps": [
+    "moon-contrib-user",
+    "moon-contrib-user-local",
+    "moon-contrib-user-rememberme"
+  ]
 }
