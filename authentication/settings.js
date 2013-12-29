@@ -1,3 +1,8 @@
 module.exports.config = function(settings){
-    settings.PERSISTENCE_CONNECTION= "mongodb://localhost/moonshineauth"
+    settings.DB_CONNECTION= "mongodb://localhost/moonshineauth"
 }
+module.exports.requiredComponents = [
+    "moon-contrib-user",
+    "moon-contrib-user-local",
+    "moon-contrib-user-rememberme"
+]

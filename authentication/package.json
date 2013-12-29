@@ -1,4 +1,4 @@
-﻿{
+{
   "name": "moonshine-example-authentication",
   "version": "0.0.1",
   "author": "Illniyar",
@@ -14,14 +14,9 @@
   },
   "homepage": "https://github.com/Illniyar/moonshine-example",
   "dependencies": {
-    "moonshine-js":"*",
-	"moon-contrib-user":"*",
-    "moon-contrib-user-local":"*",
-    "moon-contrib-user-rememberme":"*"
-  },
-  "moonApps": [
-    "moon-contrib-user",
-    "moon-contrib-user-local",
-    "moon-contrib-user-rememberme"
-  ]
+    "moonshine-js":"0.0.5",
+    "moon-contrib-user":"0.0.3",
+    "moon-contrib-user-local":"0.0.3",
+    "moon-contrib-user-rememberme":"0.0.3"
+  }
 }

@@ -8,12 +8,15 @@
     "type": "git",
     "url": "git://github.com/Illniyar/moonshine-example"
   },
+  "scripts":{
+	"start":"moonshine runserver"
+  },
   "licenses": {
     "type": "MIT",
     "url": "http://opensource.org/licenses/MIT"
   },
   "homepage": "https://github.com/Illniyar/moonshine-example",
   "dependencies": {
-    "moonshine-js":"*"
+    "moonshine-js":"0.0.5"
   }
 }

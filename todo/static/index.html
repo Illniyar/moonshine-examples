@@ -13,6 +13,7 @@
 <div ng-controller="MainCtrl">
 	create new: <input type="text" ng-model="newList.name"/><button type="submit" ng-click="addList(newList)">add</button>
 	<select ng-model="currentList" ng-options="l.name for l in lists"></select>
+	<br/>
 	todos in {{currentList.name}}:
 	<div ng-repeat="todo in currentList.items">
 		<input type="text" ng-model="todo"/>

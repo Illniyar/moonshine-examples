@@ -1,3 +1,3 @@
 module.exports.config = function(settings){
-    settings.PERSISTENCE_CONNECTION= "mongodb://localhost/moonshinetodo"
+    settings.DB_CONNECTION= "mongodb://localhost/moonshinetodo"
 }

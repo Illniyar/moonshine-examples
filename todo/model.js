@@ -1,7 +1,7 @@
 var moonshine = require("moonshine-js"),
-	Schema = moonshine.persistence.Schema
+	Schema = moonshine.db.Schema
 
-moonshine.persistence.schemas.list = new Schema({
+moonshine.db.schemas.list = new Schema({
     name:String,
 	items:[String]
 });
