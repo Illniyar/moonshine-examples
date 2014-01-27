@@ -1,8 +1,12 @@
 var moonshine = require("moonshine-js"),
 	Schema = moonshine.db.Schema
 
-moonshine.db.schemas.User.add({name:String})
-moonshine.db.schemas.Note = new Schema({
+var User = moonshine.db.getSchema("User")
+User.add({
+	name:String
+})
+var Note = moonshine.db.getSchema("Note")
+Note.add({
     text:String,
 	user:{type:String,ref:'user'}
 });

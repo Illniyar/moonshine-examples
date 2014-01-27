@@ -1,6 +1,6 @@
 {
   "name": "moonshine-example-todo",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Illniyar",
   "description": "a web framework for rapid development of SPA apps with angular.js,node and mongodb",
   "private":true,
@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/Illniyar/moonshine-example",
   "dependencies": {
-    "moonshine-js":"0.0.5"
+    "moonshine-js":"0.0.6"
   }
 }

@@ -1,7 +1,7 @@
-var todoexample =angular.module('moonshine.todoexample',["api.moonbridge"])
+var todoexample =angular.module('moonshine.todoexample',["moon.angular"])
 
-todoexample.controller("MainCtrl",["moonbridge","$scope",function(moonbridge,$scope){
-	var resource = moonbridge.all('lists')
+todoexample.controller("MainCtrl",["Restangular","$scope",function(Restangular,$scope){
+	var resource = Restangular.all('lists')
 	resource.getList().then(function(lists){
 		$scope.lists = lists;
 	});

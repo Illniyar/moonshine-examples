@@ -1,13 +1,13 @@
-var authexample =angular.module('moonshine.authexample',["api.moonbridge","ui.state","user.authentication","user.local"])
+var authexample =angular.module('moonshine.authexample',["moon.angular","ui.state","user.authentication","user.local"])
 
-authexample.controller("MainCtrl",["moonbridge","$scope","authentication",function(moonbridge,$scope,authentication){
+authexample.controller("MainCtrl",["Restangular","$scope","authentication",function(Restangular,$scope,authentication){
     $scope.authentication = authentication
 }])
-authexample.controller("SecuredCtrl",["moonbridge","$scope","authentication",function(moonbridge,$scope,authentication){
+authexample.controller("SecuredCtrl",["Restangular","$scope","authentication",function(Restangular,$scope,authentication){
 	$scope.user = authentication.user
     $scope.authentication = authentication
 }])
-authexample.controller("HomeCtrl",["moonbridge","$scope","authentication",function(moonbridge,$scope,authentication){
+authexample.controller("HomeCtrl",["Restangular","$scope","authentication",function(Restangular,$scope,authentication){
 	$scope.user = authentication.user
     $scope.authentication = authentication
 }])
