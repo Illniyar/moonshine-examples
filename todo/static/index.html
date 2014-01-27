@@ -11,17 +11,26 @@
   </head>
 <body>
 <div ng-controller="MainCtrl">
-	create new: <input type="text" ng-model="newList.name"/><button type="submit" ng-click="addList(newList)">add</button>
-	<select ng-model="currentList" ng-options="l.name for l in lists"></select>
+	create a new list: <input type="text" ng-model="newList.name" placeholder="list name" />
+	<button type="submit" ng-click="addList(newList)">add</button>
 	<br/>
-	todos in {{currentList.name}}:
-	<div ng-repeat="todo in currentList.items">
-		<input type="text" ng-model="todo"/>
+	<div ng-show="lists.length >0">
+		Select a list:	<select ng-model="currentList" ng-options="l.name for l in lists"></select>
+		<br/>
 	</div>
-	<button type="submit" ng-click="currentList.put()">update</button>
-	<div>
-		add todo: <br/>
-		<input type="text" ng-model="newTodo"/><button type="submit" ng-click="currentList.items.push(newTodo);currentList.put();newTodo='';">add</button>
+	<div ng-show="currentList" style="padding-left:20px">
+		<span ng-show="currentList.items.length > 0">
+			todos in {{currentList.name}}:
+			<div ng-repeat="todo in currentList.items" style="padding-left:40px">
+				<input type="text" ng-model="todo"/>
+			</div>
+			<button type="submit" ng-click="currentList.put()">update changes in list</button>
+		</span>
+		<br/><br/>
+		<div>
+			add new todo: <br/>
+			<input type="text" ng-model="newTodo" placeholder="text"/><button type="submit" ng-click="currentList.items.push(newTodo);currentList.put();newTodo='';">add</button>
+		</div>
 	</div>
 </div>
 </body>

@@ -14,52 +14,64 @@
 
 	<script type="text/ng-template" id="home.html">
 		<div>
-			you are home.
-			<div ng-show="authentication.isAuthenticated">welcome {{user.name}} (username:{{user.username}})<div>
-			<div ng-hide="authentication.isAuthenticated">but you are not logged in</div>
+			You are inside the home route.
+			<div ng-show="authentication.isAuthenticated">You are logged in as {{user.name}} (username:{{user.username}})</div>
+			<div ng-hide="authentication.isAuthenticated">But you are not logged .</div>
 		</div>
     </script>
     <script type="text/ng-template" id="logout.html">
       <div>
-          are you sure you want to logout?<br/>
+		  You are inside the logout route.<br/>
+          Are you sure you want to logout?<br/>
           <button type="submit" ng-click="logout()">yes</button>
           <button type="submit" ng-click="cancelLogout()">cancel</button>
     </script>
 	<script type="text/ng-template" id="register.html">
-		<div>
+		You are in the register route. <br/>
 			<div ng-hide="state == 'waiting'">status: {{state}}</div>
-			register with:<br/>
-			username:<input type="text" ng-model="user.username"/><br/>
-			password:<input type="text" ng-model="user.password"/><br/>
-            name:<input type="text" ng-model="user.name"/><br/>
-            rememberMe:<input type="checkbox" ng-model="user.rememberme"/><br/>
-			<button type="submit" ng-click="register()">register</button>
+			<div ng-show="authentication.nextLocation != '/' && authentication.nextLocation != '/login'">
+				You arrived here from {{authentication.nextLocation}} route.
+			</div>
+			Register:<br/>
+			<div style="margin-left:20px">
+				username:<input type="text" ng-model="user.username"/><br/>
+				password:<input type="text" ng-model="user.password"/><br/>
+				name:<input type="text" ng-model="user.name"/><br/>
+				rememberMe:<input type="checkbox" ng-model="user.rememberme"/><br/>
+				<button type="submit" ng-click="register()">register</button>
+			</div>
 			<br/>
-			<a href="#/login">register</a>
-		</div>
+			Or go to <a href="#/login">login</a>
     </script>
 	<script type="text/ng-template" id="login.html">
 		<div>
+			You are in the login route. <br/>
+			<div ng-show="authentication.nextLocation != '/' && authentication.nextLocation != '/login'">
+				You arrived here from {{authentication.nextLocation}} route.
+			</div>
 			<div ng-hide="state == 'waiting'">status: {{state}}</div>
-			login with:<br/>
-            username:<input type="text" ng-model="user.username"/><br/>
-            password:<input type="text" ng-model="user.password"/><br/>
-            rememberMe:<input type="checkbox" ng-model="user.rememberme"/>
-			<button type="submit" ng-click="login()">login</button>
+			Login:<br/>
+			<div style="margin-left:20px">
+				username:<input type="text" ng-model="user.username"/><br/>
+				password:<input type="text" ng-model="user.password"/><br/>
+				rememberMe:<input type="checkbox" ng-model="user.rememberme"/><br/>
+				<button type="submit" ng-click="login()">login</button>
+			</div>
 			<br/>
-			<a href="#/register">register</a>
+			Or go to <a href="#/register">register</a>.
 		</div>
     </script>
   </head>
 <body>
 <div ng-controller="MainCtrl">
-	navigation:<br/>
-	<a ng-hide="authentication.isAuthenticated" href="#/login">login</a>
-    <a ng-show="authentication.isAuthenticated" href="#/logout">logout</a>
-    <br/>
-	<a href="#/home">home</a><br/>
-	<a href="#/secured">secured</a><br/>
-	<div ui-view></div>
+	<div style="margin-bottom:20px">
+	Navigation:
+		<a ng-hide="authentication.isAuthenticated" href="#/login">Signup/Login</a>
+		<a ng-show="authentication.isAuthenticated" href="#/logout">Logout</a>
+		<a href="#/home">Home</a>
+		<a href="#/secured">Secured</a>
+	</div>
+	<div ui-view style="margin-left:40px;border:2px solid; width:500px; height:300px;"></div>
 </div>
 </body>
 </html>
