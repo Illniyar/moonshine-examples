@@ -14,9 +14,9 @@
   },
   "homepage": "https://github.com/Illniyar/moonshine-example",
   "dependencies": {
-    "moonshine-js":"https://github.com/Illniyar/moonshine/tarball/master",
-    "moon-contrib-user":"https://github.com/Illniyar/moon-contrib-user/tarball/master",
-    "moon-contrib-user-local":"https://github.com/Illniyar/moon-contrib-user-local/tarball/master",
-    "moon-contrib-user-rememberme":"https://github.com/Illniyar/moon-contrib-user-rememberme/tarball/master"
+    "moonshine-js":"0.0.6",
+    "moon-contrib-user":"0.0.4",
+    "moon-contrib-user-local":"0.0.4",
+    "moon-contrib-user-rememberme":"0.0.4"
   }
 }
